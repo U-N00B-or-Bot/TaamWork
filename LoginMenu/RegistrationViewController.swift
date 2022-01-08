@@ -31,9 +31,9 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var btn: UIButton!
     
-    func btnOk() {
-        btn.isEnabled = true
-    }
+//func btnOk() {
+      //  btn.isEnabled = true
+   // }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,15 +44,15 @@ class RegistrationViewController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
         
         btn .layer.cornerRadius = 10
-        btn.isEnabled = false
+    //btn.isEnabled = false отключил пока, но удалять не стал
         
         
     }
     
     override func viewWillLayoutSubviews() {
-        if surname.text != "" && name.text != "" && fatherName.text != "" && login.text != "" && password.text != "" {
-            btn.isEnabled = true
-        }
+       // if surname.text != "" && name.text != "" && fatherName.text != "" && login.text != "" && password.text != "" {
+            //btn.isEnabled = true
+       // }
         
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -132,7 +132,7 @@
                                 <rect key="frame" x="132" y="391" width="150" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="4l4-JI-3N8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="4l4-JI-3N8"/>
                                     <constraint firstAttribute="height" constant="50" id="NML-cd-W9z"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -178,13 +178,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PKS-xo-mXA">
-                                <rect key="frame" x="30" y="144" width="354" height="26.333333333333343"/>
+                                <rect key="frame" x="30" y="93" width="354" height="26.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBP-rh-gIs">
-                                <rect key="frame" x="30" y="260" width="354" height="142.33333333333337"/>
+                                <rect key="frame" x="30" y="173" width="354" height="142.33333333333337"/>
                                 <string key="text">Это приложение поможет Вам приобрести деньги, а самое главное - очень быстро!  Рассчитает количество дней, в течение которых их необходимо вернуть, а также процентную ставку. Вы можете отслеживать ифнормацию Вашего займа во вкладке "История займа".  Давайте начнем!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -196,8 +196,8 @@
                         <constraints>
                             <constraint firstItem="unH-UW-bBB" firstAttribute="trailing" secondItem="PKS-xo-mXA" secondAttribute="trailing" constant="30" id="3h6-zb-iL6"/>
                             <constraint firstItem="PKS-xo-mXA" firstAttribute="leading" secondItem="unH-UW-bBB" secondAttribute="leading" constant="30" id="JxW-yG-1gm"/>
-                            <constraint firstItem="PKS-xo-mXA" firstAttribute="top" secondItem="unH-UW-bBB" secondAttribute="top" constant="100" id="Ndy-Z7-ZZN"/>
-                            <constraint firstItem="UBP-rh-gIs" firstAttribute="top" secondItem="PKS-xo-mXA" secondAttribute="bottom" constant="89.5" id="SPk-Lb-97E"/>
+                            <constraint firstItem="PKS-xo-mXA" firstAttribute="top" secondItem="unH-UW-bBB" secondAttribute="top" constant="49" id="Ndy-Z7-ZZN"/>
+                            <constraint firstItem="UBP-rh-gIs" firstAttribute="top" secondItem="PKS-xo-mXA" secondAttribute="bottom" constant="53.5" id="SPk-Lb-97E"/>
                             <constraint firstItem="unH-UW-bBB" firstAttribute="trailing" secondItem="UBP-rh-gIs" secondAttribute="trailing" constant="30" id="cAb-79-WNo"/>
                             <constraint firstItem="UBP-rh-gIs" firstAttribute="leading" secondItem="unH-UW-bBB" secondAttribute="leading" constant="30" id="pVx-0z-eot"/>
                         </constraints>
@@ -542,11 +542,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="7HC-ZC-an4"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ЗАРЕГИСТРИРОВАТЬСЯ">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="ЗАРЕГИСТРИРОВАТЬСЯ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="registrationBtnPressed" destination="JPU-VH-Qw5" eventType="touchUpInside" id="oau-zo-mIm"/>
                                 </connections>
