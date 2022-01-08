@@ -34,10 +34,16 @@ class EnterScreenViewController: UIViewController {
     
     
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        login.returnKeyType = .next
+        password.returnKeyType = .done
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.login.delegate = self
+        self.password.delegate = self
+        
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "pic3")
         backgroundImage.contentMode = .scaleAspectFill
@@ -84,65 +90,27 @@ class EnterScreenViewController: UIViewController {
                                 self.present(allertController, animated: true, completion: nil)            }
         
         
-        
-        /*
-        let security = Person(name: "", surname: "", fatherName: "", login: login.text!, password: password.text!)
-            
-        
-        for person in ArrayPerson.shared.array {
-            //if person.login == login.text && person.password == password.text
-            if person == security{
-                hello = "Здравствуйте, \(person.name) \(person.fatherName)!"}
-            else {let allertController = UIAlertController(title: "Нельзя", message: person.login, preferredStyle: .alert)
-                let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                }
-                allertController.addAction(action)
-                self.present(allertController, animated: true, completion: nil)}
-    }
-        
-       
-        
-       
-        
-        if login.text == "" || password.text == ""{
-            let allertController = UIAlertController(title: "Нельзя", message: "ПУСТОТА ПЛОХО", preferredStyle: .alert)
-                let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                }
-                allertController.addAction(action)
-                self.present(allertController, animated: true, completion: nil)
-            
-        
-        }else {
-            if ArrayPerson.shared.array.count == 0 {
-                let allertController = UIAlertController(title: "Нельзя", message: "Юзер не найден", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                    }
-                    allertController.addAction(action)
-                    self.present(allertController, animated: true, completion: nil)
-            } else {
-            
-            
-            for person in ArrayPerson.shared.array {
-                //if person.login == login.text && person.password == password.text
-                if person == security{
-                    hello = "Здравствуйте, \(person.name) \(person.fatherName)!"}
-                else {let allertController = UIAlertController(title: "Нельзя", message: person.login, preferredStyle: .alert)
-                    let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                    }
-                    allertController.addAction(action)
-                    self.present(allertController, animated: true, completion: nil)}
-            
-        }
-            
-            
-        }
-        }
-        
-        */
-        
     }
     
 
+}
+
+extension EnterScreenViewController: UITextFieldDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == login {
+            password.becomeFirstResponder()
+        } else {
+            btnEnterPress()
+            performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+        }
+        return true
+    }
+    
 }
   
     

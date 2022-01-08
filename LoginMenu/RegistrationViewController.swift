@@ -34,9 +34,20 @@ class RegistrationViewController: UIViewController {
 //func btnOk() {
       //  btn.isEnabled = true
    // }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        name.returnKeyType = .next
+        surname.returnKeyType = .next
+        fatherName.returnKeyType = .next
+        login.returnKeyType = .next
+        password.returnKeyType = .done
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.name.delegate = self
+        self.surname.delegate = self
+        self.fatherName.delegate = self
+        self.login.delegate = self
+        self.password.delegate = self
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "pic2")
@@ -90,64 +101,32 @@ class RegistrationViewController: UIViewController {
         
             
         }
-        
-        
-        
-        
-        
-       /*
-      
-      if ArrayPerson.shared.array.count == 0 {
-          if surname.text == "" || name.text == "" || fatherName.text == "" || login.text == "" || password.text == "" {
-              let allertController = UIAlertController(title: "Нельзя", message: "Заполните все поля", preferredStyle: .alert)
-                              let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                              }
-                              allertController.addAction(action)
-                              self.present(allertController, animated: true, completion: nil)
-          } else {
-              ArrayPerson.shared.array.append(namae) }
-      } else {
-          
-          
-          if surname.text == "" || name.text == "" || fatherName.text == "" || login.text == "" || password.text == "" {
-              let allertController = UIAlertController(title: "Нельзя", message: "Заполните все поля", preferredStyle: .alert)
-                              let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                              }
-                              allertController.addAction(action)
-                              self.present(allertController, animated: true, completion: nil)
-          } else {
-      
-      
-      for person in ArrayPerson.shared.array {
-          if login.text == person.login{
-              let allertController = UIAlertController(title: "Нельзя", message: "Такой пользователь уже есть", preferredStyle: .alert)
-                              let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                              }
-                              allertController.addAction(action)
-                              self.present(allertController, animated: true, completion: nil)
-              clear()
-              return
-          } else {
-              ArrayPerson.shared.array.append(namae)
-          }
-      
-      }
-          }}
-        
-        
-        
-        let allertController = UIAlertController(title: "Успешно", message: String(ArrayPerson.shared.array.count), preferredStyle: .alert)
-        let action = UIAlertAction(title: "Хорошо", style: .default) { action in
-                        }
-                        allertController.addAction(action)
-                        self.present(allertController, animated: true, completion: nil)
-                        
-        
-                    
-        clear()
-   
-    */
-
 }
     
+extension RegistrationViewController: UITextFieldDelegate{
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switchBaseNextTextField(textField)
+        return true
+    }
+    
+    func switchBaseNextTextField(_ textField: UITextField) {
+        switch textField {
+        case self.name:
+            self.surname.becomeFirstResponder()
+        case self.surname:
+            self.fatherName.becomeFirstResponder()
+        case self.fatherName:
+            self.login.becomeFirstResponder()
+        case self.login:
+            self.password.becomeFirstResponder()
+        default:
+            registrationBtnPressed()
+        }
+    }
+}
 

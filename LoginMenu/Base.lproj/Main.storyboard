@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -143,7 +143,7 @@
                                 <connections>
                                     <action selector="btnEnterPress" destination="p7T-K0-nxN" eventType="touchUpInside" id="ohK-Dm-3Y6"/>
                                     <action selector="registrationBtnPressed" destination="JPU-VH-Qw5" eventType="touchUpInside" id="HZb-3R-mye"/>
-                                    <segue destination="teh-iX-HYh" kind="presentation" modalPresentationStyle="fullScreen" id="5l9-RS-Q54"/>
+                                    <segue destination="teh-iX-HYh" kind="presentation" identifier="showWelcomeVC" modalPresentationStyle="fullScreen" id="5l9-RS-Q54"/>
                                 </connections>
                             </button>
                         </subviews>
