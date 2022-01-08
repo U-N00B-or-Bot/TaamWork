@@ -38,6 +38,11 @@ class EnterScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "pic3")
+        backgroundImage.contentMode = .scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         btnEnter.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
     }

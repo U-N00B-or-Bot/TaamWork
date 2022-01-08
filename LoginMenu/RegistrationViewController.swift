@@ -36,8 +36,13 @@ class RegistrationViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "pic2")
+        backgroundImage.contentMode = .scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         btn .layer.cornerRadius = 10
         btn.isEnabled = false
         

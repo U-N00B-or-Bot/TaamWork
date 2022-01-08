@@ -14,10 +14,16 @@ class CreditSetViewController: UIViewController {
     @IBOutlet weak var moneyTF: UITextField!
     @IBOutlet weak var timeTF: UITextField!
     
+    
     @IBOutlet weak var getBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "pic4")
+        backgroundImage.contentMode = .scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
         creditSum.text = " \(String(Int(moneySlider.value))) ₽"
         
         timeLabel.text = String(Int(timeSlider.value))
