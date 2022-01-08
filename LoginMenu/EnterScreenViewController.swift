@@ -13,6 +13,7 @@ class EnterScreenViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var login: UITextField!
     var hello: String?
+    var currentPerson: Person?
     var ok = false
     
     
@@ -27,6 +28,7 @@ class EnterScreenViewController: UIViewController {
             if let navVC = $0 as? UINavigationController {
                 let welcomeVC = navVC.topViewController as! WelcomeViewController
                 welcomeVC.hello = hello
+                welcomeVC.currentPerson = currentPerson
             } 
         }
     }
@@ -50,7 +52,7 @@ class EnterScreenViewController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
         
         btnEnter.layer.cornerRadius = 10
-        // Do any additional setup after loading the view.
+       
     }
     
     
@@ -62,14 +64,18 @@ class EnterScreenViewController: UIViewController {
         let personaj = Person(name: "", surname: "",fatherName: "", login: login.text!, password: password.text!)
         for person in ArrayPerson.shared.array {
             if person == personaj{
+                currentPerson = person
                 ok = true
                 fullname = "Здравствуйте, \n \(person.name) \(person.fatherName)!"
+                login.text = ""
+                password.text = ""
             } else if person.login == personaj.login && password.text != ""{
                 let allertController = UIAlertController(title: "Ошибка", message: "Неверный пароль", preferredStyle: .alert)
                                     let action = UIAlertAction(title: "Ок", style: .default) { action in
                                     }
                                     allertController.addAction(action)
                                     self.present(allertController, animated: true, completion: nil)
+                
             }
             
         }

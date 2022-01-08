@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -190,6 +190,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdX-2O-rZH">
+                                <rect key="frame" x="140" y="451" width="136" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Удалить аккаунт"/>
+                                <connections>
+                                    <action selector="deleteAction" destination="dPp-R3-ri0" eventType="touchUpInside" id="IFk-tU-9Gn"/>
+                                    <segue destination="lMd-TR-hJf" kind="unwind" unwindAction="unwindFor:" id="C8C-vt-jE8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="unH-UW-bBB"/>
                         <color key="backgroundColor" red="0.9101894572" green="0.66825131469999999" blue="0.12809517500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -270,10 +280,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NDZ-kV-FCp">
-                                <rect key="frame" x="23" y="272" width="347" height="80"/>
+                                <rect key="frame" x="23" y="272" width="368" height="80"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wby-HB-fvx">
-                                        <rect key="frame" x="0.0" y="0.0" width="347" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Желаемая сумма:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="C4D-pC-bWv">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
@@ -285,7 +295,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000" minValue="1000" maxValue="30000" translatesAutoresizingMaskIntoConstraints="NO" id="TN0-le-Fg8">
-                                                <rect key="frame" x="142" y="0.0" width="136" height="31"/>
+                                                <rect key="frame" x="142" y="0.0" width="228" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="L6s-uG-BoW"/>
                                                 </constraints>
@@ -293,20 +303,10 @@
                                                     <action selector="moneySliderAction" destination="G9I-Tk-jac" eventType="valueChanged" id="plz-tZ-EeX"/>
                                                 </connections>
                                             </slider>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xav-f1-7bB">
-                                                <rect key="frame" x="296" y="0.0" width="51" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="51" id="RMW-QG-LgG"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="JvM-Ci-YtT">
-                                        <rect key="frame" x="0.0" y="50" width="347" height="30"/>
+                                        <rect key="frame" x="0.0" y="50" width="368" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Количество дней:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SeA-Fz-dSV">
                                                 <rect key="frame" x="0.0" y="0.0" width="124" height="30"/>
@@ -319,24 +319,11 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="1cq-Sm-EC3">
-                                                <rect key="frame" x="143" y="0.0" width="134" height="31"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="130" id="jCs-gM-vXI"/>
-                                                </constraints>
+                                                <rect key="frame" x="143" y="0.0" width="227" height="31"/>
                                                 <connections>
                                                     <action selector="timeSliderAction" destination="G9I-Tk-jac" eventType="valueChanged" id="wPV-uS-dbX"/>
                                                 </connections>
                                             </slider>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kEt-Tt-NoS">
-                                                <rect key="frame" x="296" y="0.0" width="51" height="30"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="51" id="zdD-aQ-qyG"/>
-                                                </constraints>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -388,6 +375,7 @@
                             <constraint firstItem="mUB-5U-C4C" firstAttribute="trailing" secondItem="6Sh-Xo-VUh" secondAttribute="trailing" constant="130" id="OdG-KM-SJJ"/>
                             <constraint firstItem="gcP-YR-6Wr" firstAttribute="top" secondItem="NDZ-kV-FCp" secondAttribute="bottom" constant="29.5" id="OfD-7K-FA2"/>
                             <constraint firstItem="321-Mq-rLs" firstAttribute="top" secondItem="gcP-YR-6Wr" secondAttribute="bottom" constant="27" id="XVh-vE-neq"/>
+                            <constraint firstItem="mUB-5U-C4C" firstAttribute="trailing" secondItem="NDZ-kV-FCp" secondAttribute="trailing" constant="23" id="c0D-pg-hJc"/>
                             <constraint firstItem="m0j-PR-j69" firstAttribute="centerX" secondItem="1lq-BQ-k0c" secondAttribute="centerX" id="gnN-Ir-8fY"/>
                             <constraint firstItem="321-Mq-rLs" firstAttribute="centerX" secondItem="1lq-BQ-k0c" secondAttribute="centerX" id="hVM-Lz-lyL"/>
                             <constraint firstItem="NDZ-kV-FCp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Sh-Xo-VUh" secondAttribute="bottom" constant="46.333333333333371" id="iMM-rU-DX6"/>
@@ -404,11 +392,9 @@
                         <outlet property="creditSum" destination="kQ0-bN-frO" id="6cX-l0-OeA"/>
                         <outlet property="getBtn" destination="321-Mq-rLs" id="Su7-DM-iUT"/>
                         <outlet property="moneySlider" destination="TN0-le-Fg8" id="8dS-W9-XG5"/>
-                        <outlet property="moneyTF" destination="Xav-f1-7bB" id="9ss-Lq-nBl"/>
                         <outlet property="returnSum" destination="ZFZ-ei-rJM" id="Jvv-99-ao8"/>
                         <outlet property="timeLabel" destination="ha7-ir-ut5" id="rdw-DN-dyk"/>
                         <outlet property="timeSlider" destination="1cq-Sm-EC3" id="kNl-ra-ba5"/>
-                        <outlet property="timeTF" destination="kEt-Tt-NoS" id="BXo-yx-PuG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVy-cr-wdt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

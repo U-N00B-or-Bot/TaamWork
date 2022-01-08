@@ -9,6 +9,7 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     var hello: String?
+    var currentPerson: Person?
    
     
     @IBOutlet weak var labelHello: UILabel!
@@ -20,9 +21,19 @@ class WelcomeViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         labelHello.text = hello
-        // Do any additional setup after loading the view.
+        
     }
     
+    @IBAction func deleteAction() {
+       
+        
+        
+        let deletePerson = ArrayPerson.shared.array.firstIndex(of: currentPerson!)
+        
+        ArrayPerson.shared.array.remove(at: deletePerson!)
+       
+        
+    }
     
     
 
