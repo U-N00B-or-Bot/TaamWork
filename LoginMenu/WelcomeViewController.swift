@@ -37,10 +37,19 @@ class WelcomeViewController: UIViewController {
         
         let action = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
         let scondAction = UIAlertAction(title: "Да", style: .default, handler: { _ in
+            guard let field = alert.textFields, field.count == 1 else {
+                return
+            }
+            let passwordField = field[0]
+            guard let password = passwordField.text, !password.isEmpty else {
+                return
+            }
+            if self.currentPerson?.password == passwordField.text {
+                let deletePerson = ArrayPerson.shared.array.firstIndex(of: self.currentPerson!)
+                ArrayPerson.shared.array.remove(at: deletePerson!)
+                self.dismiss(animated: true)
+            }
             
-            let deletePerson = ArrayPerson.shared.array.firstIndex(of: self.currentPerson!)
-            
-            ArrayPerson.shared.array.remove(at: deletePerson!)
         })
         alert.addAction(action)
         alert.addAction(scondAction)
