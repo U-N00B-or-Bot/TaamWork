@@ -25,12 +25,29 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func deleteAction() {
-       
         
         
-        let deletePerson = ArrayPerson.shared.array.firstIndex(of: currentPerson!)
+        let alert = UIAlertController(title: "Внимание", message: "Вы точно хотите удалить аккаунт?", preferredStyle: .alert)
+        alert.addTextField { field in
+            field.placeholder = "Password"
+            field.returnKeyType = .done
+            field.isSecureTextEntry = true
+        }
         
-        ArrayPerson.shared.array.remove(at: deletePerson!)
+        
+        let action = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
+        let scondAction = UIAlertAction(title: "Да", style: .default, handler: { _ in
+            
+            let deletePerson = ArrayPerson.shared.array.firstIndex(of: self.currentPerson!)
+            
+            ArrayPerson.shared.array.remove(at: deletePerson!)
+        })
+        alert.addAction(action)
+        alert.addAction(scondAction)
+        self.present(alert, animated: true, completion: nil)
+        
+        
+
        
         
     }

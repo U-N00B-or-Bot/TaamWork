@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hnS-fg-7Uq">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -190,14 +190,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdX-2O-rZH">
-                                <rect key="frame" x="140" y="451" width="136" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdX-2O-rZH">
+                                <rect key="frame" x="139.33333333333331" y="368" width="135.33333333333331" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135.33000000000001" id="512-9E-U85"/>
+                                    <constraint firstAttribute="height" constant="50" id="q6n-UA-PNT"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Удалить аккаунт"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="deleteAction" destination="dPp-R3-ri0" eventType="touchUpInside" id="IFk-tU-9Gn"/>
-                                    <segue destination="lMd-TR-hJf" kind="unwind" unwindAction="unwindFor:" id="C8C-vt-jE8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -205,11 +214,13 @@
                         <color key="backgroundColor" red="0.9101894572" green="0.66825131469999999" blue="0.12809517500000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="unH-UW-bBB" firstAttribute="trailing" secondItem="PKS-xo-mXA" secondAttribute="trailing" constant="30" id="3h6-zb-iL6"/>
+                            <constraint firstItem="fdX-2O-rZH" firstAttribute="top" secondItem="UBP-rh-gIs" secondAttribute="bottom" constant="52.666666666666629" id="F97-kk-GR9"/>
                             <constraint firstItem="PKS-xo-mXA" firstAttribute="leading" secondItem="unH-UW-bBB" secondAttribute="leading" constant="30" id="JxW-yG-1gm"/>
                             <constraint firstItem="PKS-xo-mXA" firstAttribute="top" secondItem="unH-UW-bBB" secondAttribute="top" constant="49" id="Ndy-Z7-ZZN"/>
                             <constraint firstItem="UBP-rh-gIs" firstAttribute="top" secondItem="PKS-xo-mXA" secondAttribute="bottom" constant="53.5" id="SPk-Lb-97E"/>
                             <constraint firstItem="unH-UW-bBB" firstAttribute="trailing" secondItem="UBP-rh-gIs" secondAttribute="trailing" constant="30" id="cAb-79-WNo"/>
                             <constraint firstItem="UBP-rh-gIs" firstAttribute="leading" secondItem="unH-UW-bBB" secondAttribute="leading" constant="30" id="pVx-0z-eot"/>
+                            <constraint firstItem="fdX-2O-rZH" firstAttribute="centerX" secondItem="Zba-mA-dEY" secondAttribute="centerX" id="rm4-la-sOz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="63A-zG-w2P">
