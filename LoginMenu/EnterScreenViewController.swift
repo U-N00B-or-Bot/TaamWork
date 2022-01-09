@@ -14,22 +14,23 @@ class EnterScreenViewController: UIViewController {
     @IBOutlet weak var login: UITextField!
     var hello: String?
     var currentPerson: Person?
+    var zaim: Loan!
     var ok = false
     
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tabBarController = segue.destination as! UITabBarController
-        let viewControllers = tabBarController.viewControllers
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
    
-            
-        
-        viewControllers! .forEach{
-            if let navVC = $0 as? UINavigationController {
-                let welcomeVC = navVC.topViewController as! WelcomeViewController
-                welcomeVC.hello = hello
-                welcomeVC.currentPerson = currentPerson
-            } 
+        for viewController in viewControllers {
+            if let navVC = viewController as? UINavigationController {
+                let welcomeVC = navVC.topViewController as? WelcomeViewController
+                welcomeVC?.hello = hello
+                welcomeVC?.currentPerson = currentPerson
+                let creditVC = navVC.topViewController as? CreditSetViewController
+                creditVC?.zaim = zaim
+            }
         }
     }
     

@@ -14,7 +14,7 @@ class CreditSetViewController: UIViewController {
     
     @IBOutlet weak var getBtn: UIButton!
     
-    var zaim: Loan?
+    var zaim: Loan!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +58,17 @@ class CreditSetViewController: UIViewController {
         let money = Int(moneySlider.value)
         var zaim = Loan(sumOfLoan: money, numberOfDays: days, refundAmount: money + (((money/100)*2)*days))
         
-        let allertController = UIAlertController(title: "Поздравляем!", message: "Займ успешно оформлен, не забудьте вернуть во время!", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Хорошо", style: .default) { action in
-                        }
-                        allertController.addAction(action)
-                        self.present(allertController, animated: true, completion: nil)
+//        let allertController = UIAlertController(title: "Поздравляем!", message: "Займ успешно оформлен, не забудьте вернуть во время!", preferredStyle: .alert)
+//        let action = UIAlertAction(title: "Хорошо", style: .default) { action in
+//                        }
+//                        allertController.addAction(action)
+//                        self.present(allertController, animated: true, completion: nil)
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let historyVC = segue.destination as? HistoryViewController else { return }
+        historyVC.zaim = zaim
     }
     
 

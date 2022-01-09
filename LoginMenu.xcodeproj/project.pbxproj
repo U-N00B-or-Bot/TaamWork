@@ -18,6 +18,7 @@
 		D4FABDA7277EEB3600415E6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4FABDA5277EEB3600415E6B /* LaunchScreen.storyboard */; };
 		D4FABDAF277EEC2000415E6B /* name.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FABDAE277EEC2000415E6B /* name.swift */; };
 		D4FABDB5277F5C7100415E6B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FABDB4277F5C7100415E6B /* MainViewController.swift */; };
+		ED20E381278B15DE000AD5B2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED20E380278B15DE000AD5B2 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D4FABDA8277EEB3600415E6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4FABDAE277EEC2000415E6B /* name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = name.swift; sourceTree = "<group>"; };
 		D4FABDB4277F5C7100415E6B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED20E380278B15DE000AD5B2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				D4FABDA3277EEB3600415E6B /* Assets.xcassets */,
 				D4FABDA5277EEB3600415E6B /* LaunchScreen.storyboard */,
 				D4FABDA8277EEB3600415E6B /* Info.plist */,
+				ED20E380278B15DE000AD5B2 /* HistoryViewController.swift */,
 			);
 			path = LoginMenu;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				D49915C9277F65F20022F62C /* RegistrationViewController.swift in Sources */,
 				D4FABDAF277EEC2000415E6B /* name.swift in Sources */,
 				D4FABD9D277EEB3400415E6B /* SceneDelegate.swift in Sources */,
+				ED20E381278B15DE000AD5B2 /* HistoryViewController.swift in Sources */,
 				7315ECB6278768AD00FA74C1 /* CreditSetViewController.swift in Sources */,
 				D49915CB277F800B0022F62C /* EnterScreenViewController.swift in Sources */,
 			);
