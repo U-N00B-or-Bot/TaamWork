@@ -84,15 +84,16 @@ class HistoryViewController: UIViewController {
             field.returnKeyType = .done
             field.keyboardType = .numberPad
             
-            let action = UIAlertAction(title: "Ок", style: .default) { action in }
+            let action = UIAlertAction(title: "Ок", style: .default) { _ in
+                SecurityMoney.shared.security = false
+                self.sumOfLoan.text = "0"
+                self.numberOfDays.text = "0"
+                self.refundAmount.text = "0"
+            }
             alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
-        
-        SecurityMoney.shared.security = false
-            sumOfLoan.text = "0"
-            numberOfDays.text = "0"
-            refundAmount.text = "0"
+
         }
     }
 }
