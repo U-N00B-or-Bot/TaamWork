@@ -12,9 +12,9 @@ class EnterScreenViewController: UIViewController {
     @IBOutlet weak var btnEnter: UIButton!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var login: UITextField!
+    
     var hello: String?
     var currentPerson: Person?
-    var zaim: Loan!
     var ok = false
     
     
@@ -28,13 +28,9 @@ class EnterScreenViewController: UIViewController {
                 let welcomeVC = navVC.topViewController as? WelcomeViewController
                 welcomeVC?.hello = hello
                 welcomeVC?.currentPerson = currentPerson
-                let creditVC = navVC.topViewController as? CreditSetViewController
-                creditVC?.zaim = zaim
             }
         }
     }
-    
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,13 +49,9 @@ class EnterScreenViewController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
         
         btnEnter.layer.cornerRadius = 10
-       
     }
     
     
-    
-
-
     @IBAction func btnEnterPress() {
         var fullname = ""
         let personaj = Person(name: "", surname: "",fatherName: "", login: login.text!, password: password.text!)
@@ -70,38 +62,41 @@ class EnterScreenViewController: UIViewController {
                 fullname = "Здравствуйте, \n \(person.name) \(person.fatherName)!"
                 login.text = ""
                 password.text = ""
-            } else if person.login == personaj.login && password.text != ""{
-                let allertController = UIAlertController(title: "Ошибка", message: "Неверный пароль", preferredStyle: .alert)
-                                    let action = UIAlertAction(title: "Ок", style: .default) { action in
-                                    }
-                                    allertController.addAction(action)
-                                    self.present(allertController, animated: true, completion: nil)
-                
             }
-            
+            else if person.login == personaj.login && password.text != ""{
+                let allertController = UIAlertController(title: "Ошибка",
+                                                         message: "Неверный пароль",
+                                                         preferredStyle: .alert)
+                let action = UIAlertAction(title: "Ок", style: .default) { action in }
+                allertController.addAction(action)
+                self.present(allertController, animated: true, completion: nil)
+            }
         }
+        
         if ok {
             hello = fullname
-        }else if login.text == "" || password.text == ""{
-            let allertController = UIAlertController(title: "Ошибка", message: "Заполните все поля", preferredStyle: .alert)
-                                let action = UIAlertAction(title: "Ок", style: .default) { action in
-                                }
-                                allertController.addAction(action)
-                                self.present(allertController, animated: true, completion: nil)
+        }
+        else if login.text == "" || password.text == "" {
+            let allertController = UIAlertController(title: "Ошибка",
+                                                     message: "Заполните все поля",
+                                                     preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ок", style: .default) { action in }
+            allertController.addAction(action)
+            self.present(allertController, animated: true, completion: nil)
         }
         else {
-            let allertController = UIAlertController(title: "Ошибка", message: "Неправильное имя пользователя/ незарегистрированный пользователь", preferredStyle: .alert)
-                                let action = UIAlertAction(title: "Cancel", style: .cancel) { action in
-                                }
-                                allertController.addAction(action)
-                                self.present(allertController, animated: true, completion: nil)            }
-        
-        
+            let allertController = UIAlertController(title: "Ошибка",
+                                                     message: "Неправильное имя пользователя/ незарегистрированный пользователь",
+                                                     preferredStyle: .alert)
+            let action = UIAlertAction(title: "Cancel", style: .cancel) { action in }
+            allertController.addAction(action)
+            self.present(allertController, animated: true, completion: nil)
+            
+        }
     }
-    
-
 }
 
+//MARK: -
 extension EnterScreenViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

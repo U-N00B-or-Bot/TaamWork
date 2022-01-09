@@ -68,21 +68,61 @@
 		D4FABD99277EEB3400415E6B /* LoginMenu */ = {
 			isa = PBXGroup;
 			children = (
-				7315ECB5278768AD00FA74C1 /* CreditSetViewController.swift */,
-				D4FABD9A277EEB3400415E6B /* AppDelegate.swift */,
-				D4FABD9C277EEB3400415E6B /* SceneDelegate.swift */,
-				D4FABDA0277EEB3400415E6B /* Main.storyboard */,
-				D49915CC277F83C10022F62C /* WelcomeViewController.swift */,
-				D49915CA277F800B0022F62C /* EnterScreenViewController.swift */,
-				D49915C8277F65F20022F62C /* RegistrationViewController.swift */,
-				D4FABDB4277F5C7100415E6B /* MainViewController.swift */,
-				D4FABDAE277EEC2000415E6B /* name.swift */,
-				D4FABDA3277EEB3600415E6B /* Assets.xcassets */,
-				D4FABDA5277EEB3600415E6B /* LaunchScreen.storyboard */,
-				D4FABDA8277EEB3600415E6B /* Info.plist */,
-				ED20E380278B15DE000AD5B2 /* HistoryViewController.swift */,
+				ED20E382278B4147000AD5B2 /* ViewControllers */,
+				ED20E383278B41CD000AD5B2 /* Models */,
+				ED20E384278B41E0000AD5B2 /* Storyboards */,
+				ED20E385278B4234000AD5B2 /* SupportingFiles */,
+				ED20E386278B4265000AD5B2 /* Resources */,
 			);
 			path = LoginMenu;
+			sourceTree = "<group>";
+		};
+		ED20E382278B4147000AD5B2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4FABDB4277F5C7100415E6B /* MainViewController.swift */,
+				D49915C8277F65F20022F62C /* RegistrationViewController.swift */,
+				D49915CA277F800B0022F62C /* EnterScreenViewController.swift */,
+				D49915CC277F83C10022F62C /* WelcomeViewController.swift */,
+				7315ECB5278768AD00FA74C1 /* CreditSetViewController.swift */,
+				ED20E380278B15DE000AD5B2 /* HistoryViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		ED20E383278B41CD000AD5B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4FABDAE277EEC2000415E6B /* name.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED20E384278B41E0000AD5B2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D4FABDA0277EEB3400415E6B /* Main.storyboard */,
+				D4FABDA5277EEB3600415E6B /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		ED20E385278B4234000AD5B2 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				D4FABD9C277EEB3400415E6B /* SceneDelegate.swift */,
+				D4FABD9A277EEB3400415E6B /* AppDelegate.swift */,
+				D4FABDA8277EEB3600415E6B /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		ED20E386278B4265000AD5B2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4FABDA3277EEB3600415E6B /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,7 +355,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CBS2DPYF3L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginMenu/Info.plist;
+				INFOPLIST_FILE = LoginMenu/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -343,7 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CBS2DPYF3L;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoginMenu/Info.plist;
+				INFOPLIST_FILE = LoginMenu/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

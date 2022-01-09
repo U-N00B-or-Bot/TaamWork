@@ -250,7 +250,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Sh-Xo-VUh">
-                                <rect key="frame" x="130" y="63.999999999999993" width="154" height="77.333333333333314"/>
+                                <rect key="frame" x="130" y="43.999999999999993" width="154" height="77.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="KIL-lT-xuR">
                                         <rect key="frame" x="0.0" y="0.0" width="154" height="77.333333333333329"/>
@@ -359,7 +359,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="m0j-PR-j69">
-                                <rect key="frame" x="136.33333333333337" y="165" width="141.66666666666663" height="78.333333333333314"/>
+                                <rect key="frame" x="136.33333333333337" y="145" width="141.66666666666663" height="78.333333333333314"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Количество дней:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmK-uw-Uq9">
                                         <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="20.333333333333332"/>
@@ -388,13 +388,13 @@
                             <constraint firstItem="mUB-5U-C4C" firstAttribute="trailing" secondItem="6Sh-Xo-VUh" secondAttribute="trailing" constant="130" id="OdG-KM-SJJ"/>
                             <constraint firstItem="gcP-YR-6Wr" firstAttribute="top" secondItem="NDZ-kV-FCp" secondAttribute="bottom" constant="29.5" id="OfD-7K-FA2"/>
                             <constraint firstItem="321-Mq-rLs" firstAttribute="top" secondItem="gcP-YR-6Wr" secondAttribute="bottom" constant="27" id="XVh-vE-neq"/>
+                            <constraint firstItem="6Sh-Xo-VUh" firstAttribute="top" secondItem="mUB-5U-C4C" secondAttribute="top" id="Xgf-fz-y3K"/>
                             <constraint firstItem="mUB-5U-C4C" firstAttribute="trailing" secondItem="NDZ-kV-FCp" secondAttribute="trailing" constant="23" id="c0D-pg-hJc"/>
                             <constraint firstItem="m0j-PR-j69" firstAttribute="centerX" secondItem="1lq-BQ-k0c" secondAttribute="centerX" id="gnN-Ir-8fY"/>
                             <constraint firstItem="321-Mq-rLs" firstAttribute="centerX" secondItem="1lq-BQ-k0c" secondAttribute="centerX" id="hVM-Lz-lyL"/>
                             <constraint firstItem="NDZ-kV-FCp" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Sh-Xo-VUh" secondAttribute="bottom" constant="46.333333333333371" id="iMM-rU-DX6"/>
                             <constraint firstItem="6Sh-Xo-VUh" firstAttribute="leading" secondItem="mUB-5U-C4C" secondAttribute="leading" constant="130" id="vtm-y3-xDK"/>
                             <constraint firstItem="NDZ-kV-FCp" firstAttribute="leading" secondItem="mUB-5U-C4C" secondAttribute="leading" constant="23" id="yh5-ly-KTO"/>
-                            <constraint firstItem="6Sh-Xo-VUh" firstAttribute="top" secondItem="mUB-5U-C4C" secondAttribute="top" constant="20" id="zBx-W1-lS4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Fc-1q-7de"/>
@@ -411,7 +411,7 @@
             </objects>
             <point key="canvasLocation" x="2784.057971014493" y="2342.1195652173915"/>
         </scene>
-        <!--История займов-->
+        <!--История займа-->
         <scene sceneID="wr0-Jd-8v3">
             <objects>
                 <viewController id="ecV-UD-wZT" customClass="HistoryViewController" customModule="LoginMenu" customModuleProvider="target" sceneMemberID="viewController">
@@ -451,7 +451,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVI-xt-QHp">
                                                 <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1v-K0-nxP">
@@ -483,7 +483,7 @@
                     <tabBarItem key="tabBarItem" title="История займов" id="1Y4-1M-Bcp">
                         <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" id="Gmc-3e-Rea"/>
+                    <navigationItem key="navigationItem" title="История займа" id="Gmc-3e-Rea"/>
                     <connections>
                         <outlet property="numberOfDays" destination="c1v-K0-nxP" id="Vmj-pa-PW2"/>
                         <outlet property="refundAmount" destination="iva-Ac-zQa" id="WVG-dW-k2k"/>

@@ -28,11 +28,5 @@ class ArrayPerson  {
     private init() {}
     
     var array = [Person]()
-    var secondArray = [Loan]()
     }
 
-struct Loan {
-    var sumOfLoan: Int
-    var numberOfDays: Int
-    var refundAmount: Int
-}

@@ -15,29 +15,28 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak var refundAmount: UILabel!
     
-    var zaim: Loan!
-
+    var sumOfLoanText = String()
+    var numberOfDaysText = String()
+    var refundAmountText = String()
+    var days = "дней"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "pic6")
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
-        sumOfLoan.text = String(zaim.sumOfLoan)
-        numberOfDays.text = String(zaim.numberOfDays)
-        refundAmount.text = String(zaim.refundAmount)
+        sumOfLoan.text = sumOfLoanText
+        numberOfDays.text = numberOfDaysText + " " + days
+        refundAmount.text = refundAmountText
+        
     }
+}
+
+
+
+    
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}

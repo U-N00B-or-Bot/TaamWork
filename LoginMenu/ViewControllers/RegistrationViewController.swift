@@ -20,6 +20,7 @@ class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var password: UITextField!
     
+    @IBOutlet weak var btn: UIButton!
     
     func clear() {
         surname.text = ""
@@ -29,7 +30,6 @@ class RegistrationViewController: UIViewController {
         password.text = ""
     }
     
-    @IBOutlet weak var btn: UIButton!
     
 //func btnOk() {
       //  btn.isEnabled = true
@@ -74,35 +74,40 @@ class RegistrationViewController: UIViewController {
         
         for person in ArrayPerson.shared.array {
             if person.login == login.text {
-                let allertController = UIAlertController(title: "Ошибка", message: "Такой логин уже существует", preferredStyle: .alert)
-                                let action = UIAlertAction(title: "Отмена", style: .cancel) { action in
-                                }
-                                allertController.addAction(action)
-                                self.present(allertController, animated: true, completion: nil)
+                let allertController = UIAlertController(title: "Ошибка",
+                                                         message: "Такой логин уже существует",
+                                                         preferredStyle: .alert)
+                let action = UIAlertAction(title: "Отмена", style: .cancel) { action in }
+                allertController.addAction(action)
+                self.present(allertController, animated: true, completion: nil)
                 return
             }}
             
             if surname.text == "" || name.text == "" || fatherName.text == "" || login.text == "" || password.text == "" {
-                let allertController = UIAlertController(title: "Ошибка", message: "Необходимо заполнить все поля для регистрации", preferredStyle: .alert)
-                                let action = UIAlertAction(title: "Понятно", style: .cancel) { action in
+                let allertController = UIAlertController(title: "Ошибка",
+                                                         message: "Необходимо заполнить все поля для регистрации",
+                                                         preferredStyle: .alert)
+                let action = UIAlertAction(title: "Понятно", style: .cancel) { action in
                                 }
-                                allertController.addAction(action)
-                                self.present(allertController, animated: true, completion: nil)
+                allertController.addAction(action)
+                self.present(allertController, animated: true, completion: nil)
                 return
             }
             ArrayPerson.shared.array.append(namae)
-        let allertController = UIAlertController(title: "Успешно!", message: "Вы зарегистрировались!", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Хорошо", style: .default) { action in
-                        }
-                        allertController.addAction(action)
-                        self.present(allertController, animated: true, completion: nil)
+        let allertController = UIAlertController(title: "Успешно!",
+                                                 message: "Вы зарегистрировались!",
+                                                 preferredStyle: .alert)
+        let action = UIAlertAction(title: "Хорошо",
+                                   style: .default) { action in }
+        allertController.addAction(action)
+        self.present(allertController, animated: true, completion: nil)
         clear()
         
-        
-            
         }
 }
-    
+
+// MARK: - 
+
 extension RegistrationViewController: UITextFieldDelegate{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

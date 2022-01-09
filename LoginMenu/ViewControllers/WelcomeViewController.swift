@@ -8,12 +8,12 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    @IBOutlet weak var delBTN: UIButton!
+    @IBOutlet weak var labelHello: UILabel!
+    
     var hello: String?
     var currentPerson: Person?
-   
-    @IBOutlet weak var delBTN: UIButton!
     
-    @IBOutlet weak var labelHello: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,19 +22,18 @@ class WelcomeViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         labelHello.text = hello
-        
     }
     
     @IBAction func deleteAction() {
         var exit = false
         
         let alert = UIAlertController(title: "Внимание", message: "Вы точно хотите удалить аккаунт?", preferredStyle: .alert)
+        
         alert.addTextField { field in
             field.placeholder = "Password"
             field.returnKeyType = .done
             field.isSecureTextEntry = true
         }
-        
         
         let action = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
         let scondAction = UIAlertAction(title: "Да", style: .destructive, handler: { _ in
@@ -52,19 +51,11 @@ class WelcomeViewController: UIViewController {
                self.delBTN.isEnabled = false
                self.labelHello.text = "АККАУНТ УДАЛЕН, ВСЕГО ДОБРОГО!"
             }
-            
         })
+        
         alert.addAction(action)
         alert.addAction(scondAction)
         self.present(alert, animated: true, completion: nil)
-        
-                
-        
 
-       
-        
     }
-    
-    
-
 }
