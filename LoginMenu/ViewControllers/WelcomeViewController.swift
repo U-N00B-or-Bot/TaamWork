@@ -28,7 +28,14 @@ class WelcomeViewController: UIViewController {
     
     @IBAction func deleteAction() {
         
-       
+        if SecurityMoney.shared.security == true {
+            let allertController = UIAlertController(title: "Запрещено!",
+                                                     message: "Сначала погасите текущий займ",
+                                                     preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ок", style: .default) { action in }
+            allertController.addAction(action)
+            self.present(allertController, animated: true, completion: nil)
+        }else{
      
         
         let alert = UIAlertController(title: "Внимание", message: "Вы точно хотите удалить аккаунт?", preferredStyle: .alert)
@@ -60,6 +67,6 @@ class WelcomeViewController: UIViewController {
         alert.addAction(action)
         alert.addAction(scondAction)
         self.present(alert, animated: true, completion: nil)
-        
+        }
     }
 }

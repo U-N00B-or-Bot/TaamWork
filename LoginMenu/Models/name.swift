@@ -30,3 +30,9 @@ class ArrayPerson  {
     var array = [Person]()
     }
 
+class SecurityMoney {
+    static var shared = SecurityMoney()
+    private init(){}
+    
+    var security = false
+}

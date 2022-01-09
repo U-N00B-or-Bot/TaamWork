@@ -3,6 +3,9 @@
 import UIKit
 
 class CreditSetViewController: UIViewController {
+    static var shared = CreditSetViewController()
+    
+    
     @IBOutlet weak var creditSum: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var returnSum: UILabel!
@@ -12,11 +15,10 @@ class CreditSetViewController: UIViewController {
     
     @IBOutlet weak var getBtn: UIButton!
     
-    var day = 0
-    var security = false
+    var day = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "pic4")
         backgroundImage.contentMode = .scaleAspectFill
@@ -55,7 +57,7 @@ class CreditSetViewController: UIViewController {
     
     
     @IBAction func getCreditBtn() {
-        if security == true{
+        if SecurityMoney.shared.security == true{
             let allertController = UIAlertController(title: "Запрещено!",
                                                      message: "Сначала погасите текущий займ",
                                                      preferredStyle: .alert)
@@ -63,7 +65,7 @@ class CreditSetViewController: UIViewController {
             allertController.addAction(action)
             self.present(allertController, animated: true, completion: nil)
         }else {
-            security = true
+            SecurityMoney.shared.security = true
         }
     }
     
