@@ -25,7 +25,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func deleteAction() {
-        var exit = false
+     
         
         let alert = UIAlertController(title: "Внимание", message: "Вы точно хотите удалить аккаунт?", preferredStyle: .alert)
         
@@ -47,7 +47,7 @@ class WelcomeViewController: UIViewController {
            if self.currentPerson?.password == passwordField.text {
             let deletePerson = ArrayPerson.shared.array.firstIndex(of: self.currentPerson!)
             ArrayPerson.shared.array.remove(at: deletePerson!)
-            exit = true
+           
                self.delBTN.isEnabled = false
                self.labelHello.text = "АККАУНТ УДАЛЕН, ВСЕГО ДОБРОГО!"
             }

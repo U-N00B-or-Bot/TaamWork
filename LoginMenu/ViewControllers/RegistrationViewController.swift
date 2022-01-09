@@ -31,9 +31,7 @@ class RegistrationViewController: UIViewController {
     }
     
     
-//func btnOk() {
-      //  btn.isEnabled = true
-   // }
+
     override func viewWillAppear(_ animated: Bool) {
         name.returnKeyType = .next
         surname.returnKeyType = .next
@@ -55,17 +53,9 @@ class RegistrationViewController: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
         
         btn .layer.cornerRadius = 10
-    //btn.isEnabled = false отключил пока, но удалять не стал
-        
-        
     }
     
-    override func viewWillLayoutSubviews() {
-       // if surname.text != "" && name.text != "" && fatherName.text != "" && login.text != "" && password.text != "" {
-            //btn.isEnabled = true
-       // }
-        
-    }
+ 
 
     @IBAction func registrationBtnPressed() {
         

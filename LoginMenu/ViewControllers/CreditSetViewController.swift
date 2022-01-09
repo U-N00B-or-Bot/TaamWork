@@ -12,7 +12,7 @@ class CreditSetViewController: UIViewController {
     
     @IBOutlet weak var getBtn: UIButton!
     
-
+    var day = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +21,12 @@ class CreditSetViewController: UIViewController {
         backgroundImage.contentMode = .scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
+        
+        let days = Int(timeSlider.value)
+        let money = Int(moneySlider.value)
         creditSum.text = " \(String(Int(moneySlider.value))) ₽"
         timeLabel.text = String(Int(timeSlider.value))
+        returnSum.text = "\(String(money + (((money/100)*2)*days))) ₽"
        
         getBtn.layer.cornerRadius = 10
     }
@@ -35,7 +39,7 @@ class CreditSetViewController: UIViewController {
         let days = Int(timeSlider.value)
         let money = Int(moneySlider.value)
         returnSum.text = "\(String(money + (((money/100)*2)*days))) ₽"
-        
+        day = days
         
     }
     
@@ -45,18 +49,18 @@ class CreditSetViewController: UIViewController {
         let money = Int(moneySlider.value)
         timeLabel.text = String(Int(timeSlider.value))
         returnSum.text = "\(String(money + (((money/100)*2)*days))) ₽"
+        day = days
     }
     
     
     @IBAction func getCreditBtn() {
-        let days = Int(timeSlider.value)
-        let money = Int(moneySlider.value)
+       
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let historyVC = segue.destination as? HistoryViewController else { return }
         historyVC.sumOfLoanText = creditSum.text ?? ""
-        historyVC.numberOfDaysText = timeLabel.text ?? ""
+        historyVC.numberOfDaysINT = day
         historyVC.refundAmountText = returnSum.text ?? ""
     }
 }
