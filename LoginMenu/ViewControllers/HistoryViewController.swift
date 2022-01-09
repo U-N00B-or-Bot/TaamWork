@@ -26,7 +26,12 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let allertController = UIAlertController(title: "Поздравляем!",
+                                                 message: "Займ одобрен!",
+                                                 preferredStyle: .alert)
+        let action = UIAlertAction(title: "Спасибо", style: .default) { action in }
+        allertController.addAction(action)
+        self.present(allertController, animated: true, completion: nil)
         
         
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -42,6 +47,23 @@ class HistoryViewController: UIViewController {
         numberOfDays.text = "\(numberOfDaysINT) \(days)"
         refundAmount.text = refundAmountText
         
+    }
+    @IBAction func returnMoney() {
+        let alert = UIAlertController(title: "Внимание", message: "Для погашения займа введите номер карты с которой будут списаны деньги", preferredStyle: .alert)
+        
+        
+        alert.addTextField { field in
+            field.placeholder = "Number of card"
+            field.returnKeyType = .done
+            
+            let action = UIAlertAction(title: "Ок", style: .default) { action in }
+            alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+            
+            
+        }
+        
+       
     }
 }
 

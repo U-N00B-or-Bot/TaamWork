@@ -13,6 +13,7 @@ class CreditSetViewController: UIViewController {
     @IBOutlet weak var getBtn: UIButton!
     
     var day = 0
+    var security = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,7 +55,16 @@ class CreditSetViewController: UIViewController {
     
     
     @IBAction func getCreditBtn() {
-       
+        if security == true{
+            let allertController = UIAlertController(title: "Запрещено!",
+                                                     message: "Сначала погасите текущий займ",
+                                                     preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ок", style: .default) { action in }
+            allertController.addAction(action)
+            self.present(allertController, animated: true, completion: nil)
+        }else {
+            security = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

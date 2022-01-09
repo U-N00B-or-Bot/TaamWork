@@ -11,12 +11,14 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var delBTN: UIButton!
     @IBOutlet weak var labelHello: UILabel!
     
+    
+   
     var hello: String?
     var currentPerson: Person?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "pic5")
         backgroundImage.contentMode = .scaleAspectFill
@@ -25,6 +27,8 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func deleteAction() {
+        
+       
      
         
         let alert = UIAlertController(title: "Внимание", message: "Вы точно хотите удалить аккаунт?", preferredStyle: .alert)
@@ -56,6 +60,6 @@ class WelcomeViewController: UIViewController {
         alert.addAction(action)
         alert.addAction(scondAction)
         self.present(alert, animated: true, completion: nil)
-
+        
     }
 }
