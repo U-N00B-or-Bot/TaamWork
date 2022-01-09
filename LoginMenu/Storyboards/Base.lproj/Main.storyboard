@@ -498,11 +498,22 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLu-Ud-ore">
-                                <rect key="frame" x="132" y="476" width="150" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VLu-Ud-ore">
+                                <rect key="frame" x="112.5" y="237" width="150" height="40"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="AsN-Fb-oED"/>
+                                    <constraint firstAttribute="height" constant="40" id="L6W-ZD-ipT"/>
+                                </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Погасить займ"/>
+                                <state key="normal" title="Погасить займ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="returnMoney" destination="ecV-UD-wZT" eventType="touchUpInside" id="4Xv-MS-LGm"/>
                                 </connections>
@@ -511,7 +522,9 @@
                         <viewLayoutGuide key="safeArea" id="pww-ms-uGa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="VLu-Ud-ore" firstAttribute="top" secondItem="kAk-Gs-nKc" secondAttribute="bottom" constant="60" id="BrH-OE-KEY"/>
                             <constraint firstItem="kAk-Gs-nKc" firstAttribute="top" secondItem="pww-ms-uGa" secondAttribute="top" constant="50" id="GMD-Uj-yp5"/>
+                            <constraint firstItem="VLu-Ud-ore" firstAttribute="centerX" secondItem="hEG-94-wsB" secondAttribute="centerX" id="Pw9-WC-Mk6"/>
                             <constraint firstItem="kAk-Gs-nKc" firstAttribute="leading" secondItem="pww-ms-uGa" secondAttribute="leading" constant="15" id="dWq-Ag-edx"/>
                             <constraint firstItem="pww-ms-uGa" firstAttribute="trailing" secondItem="kAk-Gs-nKc" secondAttribute="trailing" constant="15" id="dto-iN-Hpq"/>
                             <constraint firstItem="kAk-Gs-nKc" firstAttribute="centerX" secondItem="hEG-94-wsB" secondAttribute="centerX" id="jYm-Oq-NvZ"/>
@@ -774,6 +787,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
