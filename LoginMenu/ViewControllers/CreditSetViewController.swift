@@ -66,7 +66,22 @@ class CreditSetViewController: UIViewController {
             self.present(allertController, animated: true, completion: nil)
         }else {
             SecurityMoney.shared.security = true
+            SecurityMoney.shared.cancelShowAlert = false
         }
+    }
+    @IBAction func lookCreditBtnPressed() {
+        SecurityMoney.shared.cancelShowAlert = true
+        
+        if SecurityMoney.shared.security == false{
+            let allertController = UIAlertController(title: "Займов не обнаружено",
+                                                     message: "Оформите займ, чтобы смотреть информацию о займах",
+                                                     preferredStyle: .alert)
+            let action = UIAlertAction(title: "Хорошо", style: .default) { action in }
+            allertController.addAction(action)
+            self.present(allertController, animated: true, completion: nil)
+        }
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

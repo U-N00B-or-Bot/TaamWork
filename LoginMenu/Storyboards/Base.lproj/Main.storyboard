@@ -401,6 +401,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="lookCreditBtnPressed" destination="G9I-Tk-jac" eventType="touchUpInside" id="qP7-O5-j11"/>
                                     <segue destination="ecV-UD-wZT" kind="show" id="his-81-UfB"/>
                                 </connections>
                             </button>
@@ -442,7 +443,7 @@
         <!--История займа-->
         <scene sceneID="wr0-Jd-8v3">
             <objects>
-                <viewController id="ecV-UD-wZT" customClass="HistoryViewController" customModule="LoginMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="ecV-UD-wZT" customClass="HistoryViewController" customModule="LoginMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hEG-94-wsB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -730,12 +731,12 @@
             </objects>
             <point key="canvasLocation" x="971" y="1507"/>
         </scene>
-        <!--Приветствие -->
+        <!--Инфо -->
         <scene sceneID="TKg-r9-YlT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aDb-M6-OPA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Приветствие " id="Tf6-L1-Ksn">
-                        <imageReference key="image" image="person.circle" catalog="system" symbolScale="large"/>
+                    <tabBarItem key="tabBarItem" title="Инфо " id="Tf6-L1-Ksn">
+                        <imageReference key="image" image="info.circle.fill" catalog="system" symbolScale="large"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="DSa-Aw-M9C">
@@ -751,12 +752,12 @@
             </objects>
             <point key="canvasLocation" x="228.98550724637684" y="2343.75"/>
         </scene>
-        <!--Взять займ-->
+        <!--Оформить займ-->
         <scene sceneID="y06-xX-EYc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YJ5-aU-fGV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Взять займ" id="Lz5-3w-IGU">
-                        <imageReference key="image" image="doc.text.fill" catalog="system" symbolScale="large"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="YJ5-aU-fGV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Оформить займ" id="Lz5-3w-IGU">
+                        <imageReference key="image" image="tray.and.arrow.down.fill" catalog="system" symbolScale="large"/>
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -780,8 +781,8 @@
     <resources>
         <image name="arrow.uturn.left" catalog="system" width="128" height="112"/>
         <image name="book" catalog="system" width="128" height="99"/>
-        <image name="doc.text.fill" catalog="system" width="115" height="128"/>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="info.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="tray.and.arrow.down.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

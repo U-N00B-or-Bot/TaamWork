@@ -37,12 +37,15 @@ class HistoryViewController: UIViewController {
             numberOfDays.text = "0"
             refundAmount.text = "0"
         } else {
+            
+            if SecurityMoney.shared.cancelShowAlert == false {
             let allertController = UIAlertController(title: "Поздравляем!",
                                                      message: "Займ одобрен!",
                                                      preferredStyle: .alert)
             let action = UIAlertAction(title: "Спасибо", style: .default) { action in }
             allertController.addAction(action)
             self.present(allertController, animated: true, completion: nil)
+            }
             
             if numberOfDaysINT == 1 || numberOfDaysINT == 21 {
                 days = "день"

@@ -35,4 +35,5 @@ class SecurityMoney {
     private init(){}
     
     var security = false
+    var cancelShowAlert = false
 }
