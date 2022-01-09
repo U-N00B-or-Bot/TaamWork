@@ -11,6 +11,7 @@ class WelcomeViewController: UIViewController {
     var hello: String?
     var currentPerson: Person?
    
+    @IBOutlet weak var delBTN: UIButton!
     
     @IBOutlet weak var labelHello: UILabel!
     override func viewDidLoad() {
@@ -25,7 +26,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func deleteAction() {
-        
+        var exit = false
         
         let alert = UIAlertController(title: "Внимание", message: "Вы точно хотите удалить аккаунт?", preferredStyle: .alert)
         alert.addTextField { field in
@@ -36,7 +37,7 @@ class WelcomeViewController: UIViewController {
         
         
         let action = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
-        let scondAction = UIAlertAction(title: "Да", style: .default, handler: { _ in
+        let scondAction = UIAlertAction(title: "Да", style: .destructive, handler: { _ in
             guard let field = alert.textFields, field.count == 1 else {
                 return
             }
@@ -44,10 +45,12 @@ class WelcomeViewController: UIViewController {
             guard let password = passwordField.text, !password.isEmpty else {
                 return
             }
-            if self.currentPerson?.password == passwordField.text {
-                let deletePerson = ArrayPerson.shared.array.firstIndex(of: self.currentPerson!)
-                ArrayPerson.shared.array.remove(at: deletePerson!)
-                self.dismiss(animated: true)
+           if self.currentPerson?.password == passwordField.text {
+            let deletePerson = ArrayPerson.shared.array.firstIndex(of: self.currentPerson!)
+            ArrayPerson.shared.array.remove(at: deletePerson!)
+            exit = true
+               self.delBTN.isEnabled = false
+               self.labelHello.text = "АККАУНТ УДАЛЕН, ВСЕГО ДОБРОГО!"
             }
             
         })
@@ -55,6 +58,7 @@ class WelcomeViewController: UIViewController {
         alert.addAction(scondAction)
         self.present(alert, animated: true, completion: nil)
         
+                
         
 
        

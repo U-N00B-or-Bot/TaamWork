@@ -14,6 +14,8 @@ class CreditSetViewController: UIViewController {
     
     @IBOutlet weak var getBtn: UIButton!
     
+    var zaim: Loan?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -52,6 +54,10 @@ class CreditSetViewController: UIViewController {
     
    
     @IBAction func getCreditBtn() {
+        let days = Int(timeSlider.value)
+        let money = Int(moneySlider.value)
+        var zaim = Loan(sumOfLoan: money, numberOfDays: days, refundAmount: money + (((money/100)*2)*days))
+        
         let allertController = UIAlertController(title: "Поздравляем!", message: "Займ успешно оформлен, не забудьте вернуть во время!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Хорошо", style: .default) { action in
                         }
