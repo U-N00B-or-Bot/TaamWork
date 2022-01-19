@@ -519,12 +519,21 @@
                                     <action selector="returnMoney" destination="ecV-UD-wZT" eventType="touchUpInside" id="4Xv-MS-LGm"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your number of card:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHa-jH-eLj">
+                                <rect key="frame" x="15" y="323" width="160" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pww-ms-uGa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="pww-ms-uGa" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WHa-jH-eLj" secondAttribute="trailing" symbolic="YES" id="0Oj-LE-gI1"/>
                             <constraint firstItem="VLu-Ud-ore" firstAttribute="top" secondItem="kAk-Gs-nKc" secondAttribute="bottom" constant="60" id="BrH-OE-KEY"/>
+                            <constraint firstItem="WHa-jH-eLj" firstAttribute="top" secondItem="VLu-Ud-ore" secondAttribute="bottom" constant="46" id="Dj6-e3-pph"/>
                             <constraint firstItem="kAk-Gs-nKc" firstAttribute="top" secondItem="pww-ms-uGa" secondAttribute="top" constant="50" id="GMD-Uj-yp5"/>
+                            <constraint firstItem="WHa-jH-eLj" firstAttribute="leading" secondItem="pww-ms-uGa" secondAttribute="leading" constant="15" id="KXj-WJ-lQG"/>
                             <constraint firstItem="VLu-Ud-ore" firstAttribute="centerX" secondItem="hEG-94-wsB" secondAttribute="centerX" id="Pw9-WC-Mk6"/>
                             <constraint firstItem="kAk-Gs-nKc" firstAttribute="leading" secondItem="pww-ms-uGa" secondAttribute="leading" constant="15" id="dWq-Ag-edx"/>
                             <constraint firstItem="pww-ms-uGa" firstAttribute="trailing" secondItem="kAk-Gs-nKc" secondAttribute="trailing" constant="15" id="dto-iN-Hpq"/>
@@ -536,6 +545,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="История займа" id="Gmc-3e-Rea"/>
                     <connections>
+                        <outlet property="numberOfCardLabel" destination="WHa-jH-eLj" id="M55-NK-cdb"/>
                         <outlet property="numberOfDays" destination="c1v-K0-nxP" id="Vmj-pa-PW2"/>
                         <outlet property="refundAmount" destination="iva-Ac-zQa" id="WVG-dW-k2k"/>
                         <outlet property="sumOfLoan" destination="jVI-xt-QHp" id="U4h-HW-zaC"/>

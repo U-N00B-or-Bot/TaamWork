@@ -15,6 +15,11 @@ class HistoryViewController: UIViewController {
     
     @IBOutlet weak var refundAmount: UILabel!
     
+    @IBOutlet weak var numberOfCardLabel: UILabel!
+    
+    var countLabel = UILabel()
+    var card: String?
+    
     var sumOfLoanText = String()
     var numberOfDaysINT = Int()
     var refundAmountText = String()
@@ -79,21 +84,42 @@ class HistoryViewController: UIViewController {
         
         
         
-        let alert = UIAlertController(title: "Внимание", message: "Для погашения займа введите номер карты с которой будут списаны деньги", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Внимание", message: "Для погашения займа введите номер карты, с которой будут списаны деньги", preferredStyle: .alert)
         
         
         alert.addTextField { field in
             field.placeholder = "Number of card"
+            field.delegate = self
             field.returnKeyType = .done
             field.keyboardType = .numberPad
+            self.countLabel.text = "0/16"
+            self.countLabel.font = UIFont.systemFont(ofSize: 10)
+            self.countLabel.textColor = .black
+            self.countLabel.textAlignment = .left
+            field.rightView = self.countLabel
+            field.rightViewMode = .always
+            field.rightViewRect(forBounds: CGRect(x: -10, y: 0, width: 30, height: 30))
             
-            let action = UIAlertAction(title: "Ок", style: .default) { _ in
+            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: { _ in
                 SecurityMoney.shared.security = false
                 self.sumOfLoan.text = "0"
                 self.numberOfDays.text = "0"
                 self.refundAmount.text = "0"
-            }
-            alert.addAction(action)
+                self.numberOfCardLabel.text = "Your number of card "
+                if let text = alert.textFields?[0].text {
+                    self.card = text
+                    self.numberOfCardLabel.text = self.numberOfCardLabel.text! + self.card!
+                } else {
+                    self.card = nil
+                }
+                self.countLabel.text = "0/16"
+                
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { _ in
+                self.countLabel.text = "0/16"
+            }))
+            
             self.present(alert, animated: true, completion: nil)
         }
 
@@ -101,6 +127,27 @@ class HistoryViewController: UIViewController {
     }
 }
 
+extension HistoryViewController: UITextFieldDelegate {
+    func textField(_ field: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = field.text ?? ""
+        guard let stringsRange = Range(range, in: currentText) else { return false }
+        let maxLetters = 16
+        let updatedText = currentText.replacingCharacters(in: stringsRange, with: string)
+        if updatedText.count > maxLetters {
+            UIView.animate(withDuration: 0.1, animations: {
+                self.countLabel.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            }, completion: { (finish) in
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.countLabel.transform = CGAffineTransform.identity
+                })
+            })
+            return false
+        } else {
+            countLabel.text = "\(updatedText.count)/\(maxLetters)"
+            return true
+        }
+    }
+}
 
 
     
